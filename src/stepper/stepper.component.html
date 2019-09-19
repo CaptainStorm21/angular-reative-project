@@ -1,0 +1,27 @@
+<mat-horizontal-stepper [linear]="isLinear" labelPosition="bottom" #stepper>
+  <!-- Step 1 -->
+    <mat-step [stepControl]="personalForm">
+        <form [formGroup]="personalForm">
+            <ng-template matStepLabel>Personal Details</ng-template>
+            
+            <!-- Personal Details Accordion -->
+             <app-accordion></app-accordion>
+            <div>
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+
+            
+        </form>
+       
+    </mat-step>
+
+    <!-- review --> 
+    <mat-step>
+        <ng-template matStepLabel>Review</ng-template>
+          <app-review [formData]="getFormInfo()"></app-review>
+        <div>
+            <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

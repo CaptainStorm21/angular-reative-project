@@ -1,0 +1,26 @@
+<section>
+	<form [formGroup]="personDetailsform">
+		<mat-form-field>
+		  <input matInput placeholder="First Name" required formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Middle Name" formControlName="middleName">
+     </mat-form-field>
+     <mat-form-field>
+          <input matInput placeholder="Last Name" required formControlName="lastName">   
+          </mat-form-field>
+
+<mat-form-field>
+          <mat-select formControlName="suffix" placeholder="Select suffix">
+            <mat-option *ngFor="let suffix of suffixes"  [value]="suffix.viewValue">
+            {{suffix.viewValue}}
+            </mat-option>
+      </mat-select>
+</mat-form-field>
+
+      		<mat-form-field>
+		  <input matInput placeholder="Mother's Maiden Name" required formControlName="mothersMaidenName">
+    </mat-form-field>
+   </form>
+
+</section>
